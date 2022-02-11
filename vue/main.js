@@ -2,15 +2,15 @@
 let ctx = null;
 let canvas = null;
 
-export default {
+Vue.createApp({
   data() {
     return {
       drag: false,
       old: null,
       eraser: false,
-      color: "black",
+      color: "#000000",
       lineWidth: 1
-    };
+    }
   },
   watch: {
     eraser(n) {
@@ -63,4 +63,4 @@ export default {
     });
     ctx.lineCap = "round";
   }
-};
+}).mount('#app')
