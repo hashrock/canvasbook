@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Paint</title>
+    <style>
+      body {
+        background: #333;
+        color: white;
+      }
+      canvas {
+        touch-action: none;
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <canvas
+        ref="canvas"
+        width="400"
+        height="400"
+        @pointerdown="down"
+        @pointerup="up"
+        @pointermove="move"
+      ></canvas>
+      <div>
+        <input type="color" v-model="color" />
+        <label> <input type="checkbox" v-model="eraser" />Eraser </label>
+        <select v-model.number="lineWidth">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>5</option>
+          <option>8</option>
+          <option>13</option>
+          <option>21</option>
+          <option>50</option>
+          <option>100</option>
+        </select>
+        <button @click="clear">Clear</button>
+        <button @click="save">Save</button>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
